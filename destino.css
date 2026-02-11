@@ -1,0 +1,150 @@
+/* ====== ESTILO ESPECÍFICO DA PÁGINA DE DESTINO ====== */
+
+.destino-hero {
+  background: linear-gradient(#ff3572, rgba(255, 238, 3, 0.966)),
+              url("./assets/Image.jfif") center/cover no-repeat;
+  color: #fff;
+  text-align: center;
+  padding: 5rem 1rem;
+  background-color: var(--brand);
+}
+
+.destino-hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.destino-hero p {
+  max-width: 700px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+}
+
+/* =======================
+   CONTEÚDO PRINCIPAL
+======================= */
+.destino-conteudo {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2rem;
+  margin: 4rem auto;
+  align-items: start;
+}
+
+.destino-conteudo h2 {
+  color: var(--brand);
+  margin-bottom: 1rem;
+}
+
+.info-box {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+}
+
+.info-box h3 {
+  margin-bottom: 0.8rem;
+  color: var(--brand);
+}
+
+.info-box ul {
+  list-style: none;
+  padding: 0;
+  line-height: 1.8;
+  color: var(--text-light);
+}
+
+/* =======================
+   SEÇÃO DE PACOTES
+======================= */
+.pacotes-section {
+  margin: 4rem auto;
+  text-align: center;
+}
+
+.pacotes-section h2 {
+  margin-bottom: 2rem;
+  color: var(--brand);
+}
+
+#pacotesContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  text-align: left;
+  transition: transform 0.2s ease, background 0.3s ease, color 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card-content {
+  padding: 1.5rem;
+}
+
+.card-content h3 {
+  color: var(--brand);
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.card-content p {
+  font-size: 0.95rem;
+  color: var(--text-light);
+  margin-bottom: 1rem;
+}
+
+.card-content .cta {
+  width: 100%;
+  text-align: center;
+}
+
+/* =======================
+   MODO ESCURO ESPECÍFICO
+======================= */
+body.dark .destino-hero,
+.dark-mode .destino-hero {
+  background: linear-gradient(rgba(255, 53, 114, 0.6), rgba(255, 238, 3, 0.2)),
+              url("./assets/Image.jfif") center/cover no-repeat;
+  color: #fff;
+}
+
+body.dark .info-box,
+.dark-mode .info-box {
+  background: var(--surface);
+  color: var(--text);
+  border-color: var(--border);
+}
+
+body.dark .info-box h3,
+.dark-mode .info-box h3 {
+  color: var(--accent-color, var(--brand));
+}
+
+body.dark .card,
+.dark-mode .card {
+  background: var(--surface);
+  border-color: var(--border);
+  color: var(--text);
+}
+
+body.dark .card-content p,
+.dark-mode .card-content p {
+  color: var(--text-light);
+}
+
+body.dark .pacotes-section h2,
+.dark-mode .pacotes-section h2 {
+  color: var(--accent-color, var(--brand));
+}

@@ -1,0 +1,1011 @@
+/* ==============================
+   MILES TRIP — ESTILO GERAL
+   ============================== */
+
+:root {
+  --brand: #db6612;
+  --brand-hover: #e46d12;
+  --bg: #ffffff;
+  --text: #222;
+  --text-light: #202020;
+  --surface: #fafafa;
+  --border: #e6e6e6;
+  --shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  --radius: 10px;
+}
+
+body.dark {
+  --bg: #1e1e1e;
+  --surface: #2a2a2a;
+  --text: #eaeaea;
+  --text-light: #ffffff;
+  --border: #c7c4c4;
+  --shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", sans-serif;
+}
+
+html, body {
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.4s, color 0.4s;
+  scroll-behavior: smooth;
+}
+
+/* ==============================
+   TOPO E NAVEGAÇÃO
+   ============================== */
+.topbar {
+  background: var(--brand);
+  color: #fff;
+  text-align: center;
+  font-size: 0.9rem;
+  padding: 10px;
+  
+}
+
+.topbar .pill {
+  background: rgba(255, 255, 255, 0.15);
+  padding: 2px 8px;
+  border-radius: 12px;
+  margin-right: 6px;
+  color:#0c0c0c;
+}
+.carrinho-img {
+    height:20px ;
+    width:20px;
+}
+#cartCount.badge {
+    font-size: 20px;
+}
+
+.cupom {
+    color:#0c0c0c;
+}
+  /* Modo claro padrão */
+:root {
+  --bg-color: #ececec;
+  --text-color: #000000;
+  --accent-color: #e63946;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: Arial, sans-serif;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Modo escuro */
+.dark-mode {
+  --bg-color: #0F0F10;
+  --brand-hover: #e46d12;
+  --accent-color: #ffb703;
+  --text: #ffffff; /* cor principal do texto */
+  --text-light: #F3F4F6; /* textos secundários, notas, etc */
+  --surface: #151517; /* fundo dos cards */
+  --text-color: #fcfcfc;
+}
+
+button {
+  cursor: pointer;
+  background: none;
+  border: 1px solid var(--text-color);
+  color: var(--text-color);
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background: var(--accent-color);
+  color: #fff;
+}
+
+header {
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.wrap {
+  width: min(1200px, 90%);
+  margin: 30px auto;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+
+.logo {
+  text-decoration: none;
+  font-weight: 700;
+  color: var(--text);
+  font-size: 1.4rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.logo-badge {
+  /* font-size: 1.5rem; */
+  height:10vh;
+  width:auto;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.menu a {
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: color 0.2s;
+}
+
+.menu a:hover {
+  color: var(--brand);
+}
+
+/* ==============================
+   BOTÕES E ELEMENTOS COMUNS
+   ============================== */
+
+.cta {
+  background: var(--brand);
+  color: #fff !important;
+  padding: 0.7rem 1.4rem;
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s, transform 0.1s;
+}
+.cta a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.cta:hover {
+  background: var(--brand-hover);
+}
+
+.cta:active {
+  transform: scale(0.98);
+}
+
+.cta.ghost {
+  background: transparent;
+  color: var(--brand);
+  border: 1px solid var(--brand);
+}
+
+
+.badge {
+  background: var(--brand);
+  color: #fff;
+  font-size: 0.7rem;
+  border-radius: 10px;
+  padding: 2px 6px;
+  margin-left: 4px;
+}
+
+/* ==============================
+   HERO SECTION
+   ============================== */
+ .hero {
+  background-image: 
+    linear-gradient(rgba(117, 55, 20, 0.4), rgba(97, 42, 17, 0.4)), /* overlay escuro */
+    url("./assets/fundo.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: var(--text);
+  padding: 5rem 0;
+}
+
+
+.hero-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.hero h1 {
+  font-size: 2.2rem;
+  line-height: 1.3;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  color: var(--text-light);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  color: var(--bg);
+}
+
+.hero-card {
+  background: var(--surface);
+  padding: 1.2rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+
+.hero-card .check {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  margin: 0.8rem 0;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.note {
+  font-size: 0.85rem;
+  color: var(--text-light);
+  margin-top: 1rem;
+}
+
+.hero-img {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  background: var(--surface);
+}
+/* =========================
+   PROMOTIONAL RECTANGULAR BANNER
+========================= */
+.promo-banner {
+  background: var(--surface);
+  padding: 2rem 0;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+}
+
+.promo-banner .wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.promo-banner img {
+  width: 100%;
+  max-height: 200px;
+  object-fit: cover;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.carousel {
+  position: relative;
+  width: 100%;
+  height: 250px; /* ajusta conforme o banner */
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-slide {
+  min-width: 100%;
+  overflow: hidden;
+}
+
+.carousel-slide img {
+  width: 100%;
+  display: block;
+  border-radius: var(--radius);
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.5);
+  border: none;
+  color: white;
+  font-size: 2rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.carousel-btn.prev {
+  left: 10px;
+}
+
+.carousel-btn.next {
+  right: 10px;
+}
+
+
+.tag-floating {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  background: var(--brand);
+  color: #fff;
+  padding: 0.3rem 0.8rem;
+  font-size: 0.8rem;
+  border-radius: var(--radius);
+}
+
+/* ==============================
+   PRODUTOS / GRID
+   ============================== */
+
+.section-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 1rem;
+}
+
+.section-title h2 {
+  font-size: 1.6rem;
+  color: var(--text-light);
+}
+
+.caps {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  color: var(--brand);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+}
+
+.card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.card-content {
+  padding: 1rem;
+}
+
+.card-content h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.4rem;
+}
+
+.card-content p {
+  color: var(--text-light);
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.card-content a.cta.ghost {
+  background: transparent;
+  color: var(--brand);
+  border: 1px solid var(--brand);
+  display: inline-block;  /* prevent full-width stretching */
+  padding: 0.5rem 1rem;   /* tighter padding for balance */
+  margin-bottom: 0.5rem;  /* small space before the next button */
+  border-radius: 6px;     /* matches your main CTA style */
+  transition: 0.3s ease;
+}
+
+.card-content a.cta.ghost:hover {
+  background: var(--brand);
+  color: #fff;
+}
+
+.card-content .cta.add-to-cart {
+  margin-top: 0.3rem;
+}
+
+.produtos-wrap {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+
+/* ==============================
+   COMO FUNCIONA
+   ============================== */
+
+.steps {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 1.5rem;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.step b {
+  display: inline-block;
+  background: var(--brand);
+  color: #fff;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  border-radius: 50%;
+  font-size: 1rem;
+}
+
+.step h3 {
+  margin-top: 0.5rem;
+}
+
+.step p {
+  color: var(--text-light);
+  font-size: 0.9rem;
+  max-width: 220px;
+  margin: 0.5rem auto;
+}
+
+/* ==============================
+   INDICADORES / KPI
+   ============================== */
+
+.trust {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+  padding: 3rem 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.kpi h3 {
+  color: var(--brand);
+  font-size: 1.4rem;
+}
+
+.kpi p {
+  color: var(--text-light);
+  font-size: 0.9rem;
+}
+
+/* ==============================
+   DEPOIMENTOS
+   ============================== */
+
+.testi {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.quote {
+  background: var(--surface);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 1.5rem;
+  max-width: 300px;
+}
+
+.who {
+  font-size: 0.9rem;
+  color: var(--text-light);
+  margin-top: 0.5rem;
+}
+
+/* ==============================
+   NEWSLETTER
+   ============================== */
+
+.newsletter {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 3rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.newsletter input {
+  padding: 0.7rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  width: 220px;
+}
+
+.newsletter .cta {
+  padding: 0.7rem 1.2rem;
+}
+
+/* ==============================
+   FOOTER
+   ============================== */
+
+footer {
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+  margin-top: 3rem;
+}
+
+.foot {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  padding: 3rem 0;
+}
+
+footer h4 {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+footer a {
+  color: var(--text-light);
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+footer a:hover {
+  color: var(--brand);
+}
+
+.sub {
+  border-top: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+  padding: 1rem 0;
+}
+
+.pay .pill {
+  background: var(--border);
+  color: var(--text-light);
+  padding: 2px 6px;
+  border-radius: 6px;
+  margin-left: 4px;
+}
+
+/* ==============================
+   CARRINHO (DRAWER)
+   ============================== */
+
+.drawer {
+  position: fixed;
+  right: -100%;
+  top: 0;
+  width: 350px;
+  height: 100%;
+  background: var(--surface);
+  color: var(--text);
+  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.2);
+  transition: right 0.4s ease;
+  display: flex;
+  flex-direction: column;
+  z-index: 200;
+}
+
+.drawer.active {
+  right: 0;
+}
+
+.drawer header {
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+}
+
+.drawer .content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1rem;
+}
+
+.drawer .summary {
+  border-top: 1px solid var(--border);
+  padding: 1rem 0;
+}
+
+.drawer .row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.checkout {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+/* ==============================
+   RESPONSIVIDADE
+   ============================== */
+
+@media (max-width: 850px) {
+  .hero-inner {
+    grid-template-columns: 1fr;
+  }
+  .only-desktop {
+    display: none;
+  }
+  .newsletter {
+    flex-direction: column;
+  }
+}
+
+/* ===== Promo rectangular banner below hero ===== */
+.promo-banner {
+  background: var(--surface);
+  padding: 1.25rem 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.promo-carousel {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.promo-carousel .carousel-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.promo-carousel .carousel-slide {
+  min-width: 100%;
+  overflow: hidden;
+}
+
+.promo-carousel img {
+  width: 100%;
+  max-height: 400px; /* medium height */
+  object-fit: cover;
+  display: block;
+}
+
+/* reuse .carousel-btn styles if present; if not, basic fallback */
+.promo-carousel .carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.45);
+  border: none;
+  color: white;
+  font-size: 1.6rem;
+  padding: 0.35rem 0.75rem;
+  cursor: pointer;
+  border-radius: 6px;
+  z-index: 10;
+}
+
+.promo-carousel .carousel-btn.prev { left: 12px; }
+.promo-carousel .carousel-btn.next { right: 12px; }
+
+@media (max-width: 900px) {
+  .promo-carousel img { max-height: 220px; }
+}
+
+/* Chat lateral */
+#chatContainer {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  width: 300px;
+  height: 400px;
+  background: #f1f1f1;
+  border: 1px solid #ccc;
+  display: none;
+  flex-direction: column;
+  box-shadow: -2px 2px 10px rgba(0,0,0,0.2);
+  z-index: 9999;
+}
+
+#chatHeader {
+  background: #007bff;
+  color: white;
+  padding: 10px;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+#chatMessages {
+  flex: 1;
+  padding: 10px;
+  overflow-y: auto;
+  background: #fff;
+}
+
+#chatMessages p {
+  margin: 5px 0;
+  padding: 5px 10px;
+  border-radius: 10px;
+}
+
+#chatMessages .userMsg {
+  background: #007bff;
+  color: white;
+  align-self: flex-end;
+}
+
+#chatMessages .botMsg {
+  background: #e0e0e0;
+  color: black;
+  align-self: flex-start;
+}
+
+#chatForm {
+  display: flex;
+  border-top: 1px solid #ccc;
+}
+
+#chatForm input {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  outline: none;
+}
+
+#chatForm button {
+  padding: 10px;
+  border: none;
+  background: #007bff;
+  color: white;
+  cursor: pointer;
+}
+
+/* Botão flutuante do chat */
+#chatToggle {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  background: #007bff;
+  color: white;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-size: 24px;
+  z-index: 9999;
+}
+:root{
+  --brand:#FF6A00;
+  --brand-2:#00B8C9;
+  --ink:#1E1E1E;
+  --bg:#FFFFFF;
+  --muted:#6B7280;
+  --shadow: 0 10px 30px rgba(0,0,0,.15);
+}
+
+/* Botão flutuante */
+.chat-launcher{
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 9999;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--bg);
+  border: 2px solid var(--brand);
+  box-shadow: var(--shadow);
+  border-radius: 999px;
+  padding: 8px 12px 8px 8px;
+  cursor: pointer;
+  transition: transform .15s ease, box-shadow .15s ease, background .15s;
+}
+.chat-launcher:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 14px 34px rgba(0,0,0,.18);
+}
+.chat-launcher:focus{
+  outline: 3px solid var(--brand-2);
+  outline-offset: 2px;
+}
+.chat-avatar{
+  width: 56px; height: 56px;
+  display: inline-grid; place-items: center;
+  border-radius: 50%;
+  background: #FFF;
+  box-shadow: 0 4px 14px rgba(255,106,0,.35);
+}
+.chat-bubble{
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--ink);
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: #FFF3EC;
+  border: 1px dashed var(--brand);
+}
+
+/* Widget */
+.chat-widget{
+  position: fixed;
+  right: 20px;
+  bottom: 92px; /* acima do botão */
+  z-index: 9999;
+  width: min(380px, calc(100vw - 32px));
+}
+.chat-card{
+  background: var(--bg);
+  border: 1px solid #E5E7EB;
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  max-height: 70vh;
+}
+.chat-header{
+  display:flex; align-items:center; justify-content:space-between;
+  padding: 12px 14px;
+  background: linear-gradient(90deg, var(--brand) 0%, #FF8C33 100%);
+  color:#fff;
+}
+.chat-header .dot{
+  display:inline-block; width:10px; height:10px; border-radius:50%;
+  background:#36D399; margin-right:8px;
+  box-shadow: 0 0 0 6px rgba(54,211,153,.15);
+}
+.chat-header .small{ opacity:.9; font-size:12px; margin-left:8px; }
+.chat-id{ display:flex; align-items:center; }
+
+.chat-close{
+  background: rgba(255,255,255,.2);
+  border: none; color:#fff; font-size:20px;
+  width:32px; height:32px; border-radius:8px; cursor:pointer;
+  padding:0;
+}
+.chat-close:hover{ background: rgba(255,255,255,.35); }
+
+.chat-body{
+  padding: 14px; overflow:auto; background: #FAFAFA;
+}
+.msg{ display:flex; gap:10px; margin-bottom:12px; }
+.msg .avatar.mini{
+  width:28px; height:28px; border-radius:50%;
+  background: var(--brand-2);
+  box-shadow: 0 0 0 3px #E0FBFF;
+}
+.msg .bubble{
+  background:#fff; border:1px solid #E5E7EB; padding:10px 12px;
+  border-radius: 12px 12px 12px 6px; color: var(--ink);
+  max-width: 85%;
+}
+.msg.user{ justify-content:flex-end; }
+.msg.user .bubble{ background:#E8FFF8; border-color:#C7F7E7; border-radius:12px 12px 6px 12px; }
+
+.chat-input{
+  display:flex; gap:8px; padding: 12px; background:#fff; border-top:1px solid #E5E7EB;
+}
+.chat-input input{
+  flex:1; border:1px solid #E5E7EB; border-radius:10px; padding:10px 12px; font: inherit;
+}
+.chat-input .cta{
+  background: var(--brand-2); border:none; color:#fff; padding:10px 14px;
+  border-radius:10px; cursor:pointer; font-weight:700;
+}
+.chat-input .cta:hover{ filter: brightness(.95); }
+
+/* Dark mode básico, caso seu site troque classe .dark no <html> ou body */
+.dark .chat-card{ background:#111827; border-color:#1F2937; }
+.dark .chat-body{ background:#0F172A; }
+.dark .msg .bubble{ background:#111827; border-color:#1F2937; color:#E5E7EB; }
+.dark .chat-input{ background:#0B1220; border-top-color:#1F2937; }
+.dark .chat-input input{ background:#0B1220; border-color:#1F2937; color:#E5E7EB; }
+.dark .chat-launcher{ background:#0B1220; border-color: var(--brand); }
+.dark .chat-bubble{ background:#26170F; color:#F9FAFB; border-color:#FF8C33; }
+
+/* Mobile: esconde texto do botão para ficar compacto */
+@media (max-width: 480px){
+  .chat-bubble{ display:none; }
+}
+:root{
+  --z-modal: 1200;    /* se usar modais */
+  --z-cart: 1100;     /* carrinho lateral */
+  --z-chat: 1000;     /* chat */
+}
+
+/* Botão flutuante — SOMENTE BOLINHA */
+#chat-launcher.chat-launcher{
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  width: 56px;
+  height: 56px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;      /* deixa só o avatar aparecer */
+  cursor: pointer;
+  display: inline-grid;
+  place-items: center;
+  z-index: var(--z-chat);
+}
+#chat-launcher .chat-avatar{
+  width: 56px; height: 56px;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 10px 24px rgba(0,0,0,.25);
+}
+#chat-launcher .chat-bubble{ display: none !important; } /* <- esconde o texto */
+
+/* Janela do chat (continua funcionando quando abrir) */
+#chat-widget.chat-widget{
+  position: fixed;
+  right: 20px;
+  bottom: 84px;                 /* sobe pra não colar na bolinha */
+  width: min(340px, 92vw);
+  height: 440px;
+  z-index: var(--z-chat);
+}
+
+/* Garanta que o carrinho fica acima do chat */
+.cart-drawer{ z-index: var(--z-cart) !important; }
+
+/* Mobile: ajusta posição */
+@media (max-width: 480px){
+  #chat-launcher.chat-launcher{ right: 14px; bottom: 14px; width: 52px; height: 52px; }
+  #chat-launcher .chat-avatar{ width: 52px; height: 52px; }
+  #chat-widget.chat-widget{ right: 10px; bottom: 72px; width: 92vw; height: 62vh; }
+}
+

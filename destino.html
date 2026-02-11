@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pacote — Destino</title>
+  <meta name="description" content="Descubra pacotes exclusivos da Miles Trip para o destino dos seus sonhos." />
+
+  <!-- Importa estilos globais e locais -->
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./destino.css">
+</head>
+<body>
+
+  <!-- ======= Header (idêntico ao da home) ======= -->
+  <!-- Header -->
+  <header aria-label="Cabeçalho do site">
+    <div class="nav">
+      <a class="logo" href="index.html" aria-label="Miles Trip - Início">
+        <img src="./assets/milestriplogo.png" class="logo-badge" alt="Miles Trip">
+      </a>
+      <nav class="menu" aria-label="Navegação principal">
+        <a class="only-desktop" href="#produtos">Pacotes</a>
+        <a class="only-desktop" href="#como-funciona">Como funciona</a>
+        <a class="only-desktop" href="#depoimentos">Depoimentos</a>
+        <a class="only-desktop" href="#contato">Contato</a>
+        <button class="cta">
+        <a class="only-desktop btn-login" href="./pages/login.html">Login</a>
+        </button>
+        <button class="cta cart-btn" id="openCart" aria-label="Abrir carrinho">
+          <img class="carrinho-img" src="./assets/output-onlinepngtools.png" alt="carrinho"> <span class="badge" id="cartCount">0</span>
+        </button>
+        <button id="modo-toggle" class="cta">🌙 Modo escuro</button>
+        <span id="clientGreeting">Olá, visitante</span>
+        <button id="clientLogout" class="mini cta">Sair</button>
+
+      </nav>
+    </div>
+  </header>
+
+  <!-- ======= Conteúdo do destino ======= -->
+  <main class="destino">
+    <section class="destino-hero">
+      <div class="wrap">
+        <h1 id="destinoTitulo">Descubra <span class="grifo">[Destino]</span></h1>
+        <p id="destinoDescricao">Explore experiências inesquecíveis com a Miles Trip — cultura, gastronomia e lugares incríveis.</p>
+      </div>
+    </section>
+
+    <section class="wrap destino-conteudo">
+      <article>
+        <h2>Por que visitar <span id="destinoNome">[Destino]</span>?</h2>
+        <p id="destinoTexto">
+          [Destino] é um destino que combina história, modernidade e experiências únicas.  
+          Conheça os principais pontos turísticos, mergulhe na cultura local e viva momentos inesquecíveis.
+        </p>
+      </article>
+
+      <aside class="info-box">
+        <h3>Informações úteis</h3>
+        <ul>
+          <li>🌍 Idioma: <span id="idioma">[Idioma]</span></li>
+          <li>💰 Moeda: <span id="moeda">[Moeda]</span></li>
+          <li>🕓 Fuso horário: <span id="fuso">[Fuso]</span></li>
+          <li>📅 Melhor época: <span id="epoca">[Época]</span></li>
+        </ul>
+      </aside>
+    </section>
+
+    <section class="wrap pacotes-section">
+      <h2>Pacotes para <span id="destinoPacotesTitulo">[Destino]</span></h2>
+      <div id="pacotesContainer" class="grid"></div>
+    </section>
+  </main>
+
+  <!-- ======= Footer (idêntico ao da home) ======= -->
+  <footer>
+    <div class="wrap sub">
+      <span>© <span id="year"></span> Miles Trip</span>
+      <span>🌎 Viaje melhor, pague menos</span>
+    </div>
+  </footer>
+
+  <!-- Script do destino -->
+  <script src="./destino.js"></script>
+</body>
+</html>

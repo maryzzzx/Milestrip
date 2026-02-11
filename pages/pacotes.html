@@ -1,0 +1,140 @@
+
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pacotes • Miles Trip</title>
+  <link rel="stylesheet" href="./css/dashboard.css" />
+  <link rel="stylesheet" href="./css/pacotes.css" />
+</head>
+<body>
+  <div class="layout">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="brand">
+        <img src="./assets/milestriplogo.png" alt="Miles Trip" class="brand-logo" />
+    </div>
+      <nav>
+        <a href="./dashboard.html" class="nav-item">🏠 Dashboard</a>
+        <a href="./clientes.html" class="nav-item">🧍 Clientes</a>
+        <a href="./pacotes.html" class="nav-item active">✈️ Pacotes</a>
+        <a href="./financeiro.html" class="nav-item">💰 Financeiro</a>
+        <a href="./configuracoes.html" class="nav-item">⚙️ Configurações</a>
+        <div class="divider"></div>
+        <button id="logoutBtn" class="nav-item ghost">🚪 Sair</button>
+      </nav>
+    </aside>
+
+    <!-- Conteúdo -->
+    <main class="content">
+      <div class="topbar">
+        <h2>Pacotes</h2>
+        <div class="filters">
+          <input type="text" id="searchPkg" placeholder="Buscar por nome ou destino..." />
+          <select id="statusFilter">
+            <option value="todos">Todos</option>
+            <option value="ativo">Ativos</option>
+            <option value="inativo">Inativos</option>
+          </select>
+          <button id="addPkg" class="btn">+ Novo Pacote</button>
+          <button id="exportPkgs" class="btn">Exportar CSV</button>
+        </div>
+      </div>
+
+      <section class="card">
+        <div class="card-head">
+          <h3>Lista de Pacotes</h3>
+          <div class="rowx">
+            <button class="btn small" id="clearAll">Limpar tudo</button>
+            <select id="sortBy" class="btn small ghost">
+              <option value="nome-asc">Nome A→Z</option>
+              <option value="nome-desc">Nome Z→A</option>
+              <option value="preco-asc">Preço ↑</option>
+              <option value="preco-desc">Preço ↓</option>
+              <option value="vagas-desc">Vagas ↓</option>
+              <option value="vagas-asc">Vagas ↑</option>
+              <option value="validade-asc">Validade ↑</option>
+              <option value="validade-desc">Validade ↓</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="table-wrap">
+          <table class="table" id="pkgsTable">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Destino</th>
+                <th>Preço</th>
+                <th>Milhas</th>
+                <th>Vagas</th>
+                <th>Validade</th>
+                <th>Status</th>
+                <th style="width:200px">Ações</th>
+              </tr>
+            </thead>
+            <tbody id="pkgsBody"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <p class="foot">© Miles Trip — painel do vendedor</p>
+    </main>
+  </div>
+
+  <!-- Modal de Pacote -->
+  <div class="modal-backdrop" id="modalBackdrop" aria-hidden="true">
+    <div class="modal" role="dialog" aria-labelledby="modalTitle">
+      <header>
+        <h3 id="modalTitle">Novo pacote</h3>
+        <button class="btn small ghost" id="closeModal">✖</button>
+      </header>
+      <div class="body">
+        <div class="field"><label>Nome</label><input id="mNome" type="text" placeholder="Ex.: Lisboa FDS" /></div>
+        <div class="rowx">
+          <div class="field" style="flex:1"><label>Destino</label><input id="mDestino" type="text" placeholder="Cidade/País" /></div>
+          <div class="field" style="flex:1"><label>Validade</label><input id="mValidade" type="date" /></div>
+        </div>
+        <div class="rowx">
+          <div class="field" style="flex:1"><label>Preço (R$)</label><input id="mPreco" type="number" step="0.01" min="0" /></div>
+          <div class="field" style="flex:1"><label>Milhas</label><input id="mMilhas" type="number" step="1" min="0" /></div>
+          <div class="field" style="flex:1"><label>Vagas</label><input id="mVagas" type="number" step="1" min="0" /></div>
+        </div>
+        <div class="field">
+          <label>Status</label>
+          <select id="mStatus">
+            <option value="ativo">Ativo</option>
+            <option value="inativo">Inativo</option>
+          </select>
+        </div>
+      </div>
+      <footer>
+        <div class="rowx">
+          <button class="btn danger" id="deletePkg" style="display:none">Excluir</button>
+        </div>
+        <div class="rowx">
+          <button class="btn ghost" id="cancelModal">Cancelar</button>
+          <button class="btn" id="savePkg">Salvar</button>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+  <script src="./js/pacotes.js" defer></script>
+  <script src="./js/main.js" defer></script>
+  <button id="menuToggle" class="only-mobile btn small" style="position:fixed;left:12px;top:12px;z-index:1201">☰</button>
+<script>
+  const aside = document.querySelector('.sidebar');
+  document.getElementById('menuToggle')?.addEventListener('click', ()=> aside?.classList.toggle('open'));
+  document.addEventListener('click',(e)=>{
+    if (window.innerWidth>768) return;
+    if (!aside?.classList.contains('open')) return;
+    if (!e.target.closest('.sidebar') && !e.target.closest('#menuToggle')) aside.classList.remove('open');
+  });
+</script>
+
+
+</body>
+</html>

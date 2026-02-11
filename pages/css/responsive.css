@@ -1,0 +1,83 @@
+/* ===== Base segura ===== */
+* { box-sizing: border-box; }
+img, svg, video, canvas { max-width: 100%; height: auto; display: block; }
+.table-wrap { width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+button, .btn { max-width: 100%; }
+
+/* Containers comuns */
+.container, .wrap, .content { width: min(1200px, 96vw); margin: 0 auto; }
+
+/* ===== Quebras de layout ===== */
+@media (max-width: 1200px){
+  .layout { grid-template-columns: 240px 1fr; }
+}
+
+/* 992px ↓: tablet */
+@media (max-width: 992px){
+  /* Sidebar/Dashboard padrão do seu projeto */
+  .layout { display: grid; grid-template-columns: 220px 1fr; gap: 16px; }
+  .sidebar { width: 220px; }
+  .content { padding: 12px; }
+  .cards { grid-template-columns: repeat(2, minmax(0,1fr)); gap: 12px; }
+  .chart, .card-canvas { height: 280px !important; }
+  /* Tabelas: colunas respiráveis */
+  .table th, .table td { padding: 10px 12px; white-space: nowrap; }
+}
+
+/* 768px ↓: mobile landscape */
+@media (max-width: 768px){
+  /* Login/Cadastros: empilha logo + card */
+  .wrap.login-two-col { 
+    display: grid; grid-template-columns: 1fr; gap: 18px;
+    min-height: auto; padding: 18px 12px 28px;
+  }
+  .logo-img { width: clamp(180px, 50vw, 280px); margin: 6px auto; }
+
+  /* Sidebar colapsável */
+  .layout { grid-template-columns: 1fr; }
+  .sidebar { 
+    position: fixed; inset: 0 auto 0 0; width: 86vw; max-width: 320px;
+    transform: translateX(-100%); transition: transform .25s ease;
+    z-index: 1100;
+  }
+  .sidebar.open { transform: translateX(0); }
+  .content { padding: 12px; }
+  .cards { grid-template-columns: 1fr; }
+  /* Botões em linha viram bloco */
+  .rowx .btn { width: 100%; }
+  /* Tabelas: rolagem horizontal só nelas */
+  .table-wrap { margin: 0 -8px; padding: 0 8px; }
+}
+
+/* 480px ↓: mobile estreito */
+@media (max-width: 480px){
+  h1 { font-size: 1.5rem; }
+  h2 { font-size: 1.25rem; }
+  .card { padding: 16px; }
+  .badge, .status, .btn.small { font-size: 12px; }
+  .chart, .card-canvas { height: 220px !important; }
+}
+
+/* ===== Utilitários rápidos ===== */
+.stack-md { display: flex; gap: 12px; flex-wrap: wrap; }
+.stack-md > * { flex: 1 1 220px; }
+.hide-mobile { display: initial; }
+.only-mobile { display: none; }
+@media (max-width: 768px){
+  .hide-mobile { display: none !important; }
+  .only-mobile { display: initial !important; }
+}
+
+/* ===== Ajustes específicos já comuns no seu projeto ===== */
+/* Login: grid lado-esquerdo (logo) + card sem scroll da página */
+.login-grid {
+  display: grid; grid-template-columns: 1fr 540px; align-items: center;
+  gap: 56px; min-height: 100dvh; width: min(1280px, 96vw); margin: 0 auto;
+}
+@media (max-width: 980px){
+  .login-grid { grid-template-columns: 1fr; gap: 18px; min-height: auto; }
+}
+
+/* Cart drawer acima do chat */
+.cart-drawer { position: fixed; z-index: 1100; }
+.chat-launcher, .chat-window { z-index: 1000; }

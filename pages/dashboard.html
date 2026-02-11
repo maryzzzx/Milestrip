@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dashboard • Miles Trip</title>
+  <meta name="description" content="Resumo de vendas, comissões e pedidos para vendedores Miles Trip." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/dashboard.css" />
+</head>
+<body>
+  <div class="layout">
+    <!-- Sidebar -->
+    <aside class="sidebar" aria-label="Navegação principal">
+      <div class="brand">
+        <!-- CORRIGIDO: assets com caminho relativo correto -->
+        <img src="../assets/milestriplogo.png" alt="Miles Trip" class="brand-logo" />
+      </div>
+
+      <nav>
+        <a class="nav-item active" href="./dashboard.html">🏠 <span>Dashboard</span></a>
+        <a class="nav-item" href="./clientes.html">👤 <span>Clientes</span></a>
+        <a class="nav-item" href="./pacotes.html">🧳 <span>Pacotes</span></a>
+        <a class="nav-item" href="./financeiro.html">💳 <span>Financeiro</span></a>
+        <a class="nav-item" href="./configuracoes.html">⚙️ <span>Configurações</span></a>
+        <div class="divider"></div>
+        <!-- Botão de sair -->
+        <button id="logoutBtn" class="nav-item ghost" type="button">🚪 <span>Sair</span></button>
+      </nav>
+    </aside>
+
+    <!-- Conteúdo -->
+    <main class="content">
+      <header class="topbar">
+        <form class="search" role="search">
+          <input type="search" placeholder="Buscar pedidos, clientes..." aria-label="Buscar" />
+        </form>
+        <div class="user">
+          <!-- CORRIGIDO: nome do arquivo e caminho -->
+          <img src="../assets/milestriplogo.png" alt="Logo" onerror="this.style.display='none'"/>
+          <div class="who">
+            <strong>Vendedor</strong>
+            <small>Online</small>
+          </div>
+        </div>
+      </header>
+
+      <!-- KPIs -->
+      <section class="kpis" aria-label="Indicadores">
+        <article class="kpi">
+          <div class="kpi-title">Vendas Hoje</div>
+          <div class="kpi-value" id="kpi-sales">—</div>
+          <div class="kpi-sub" id="kpi-sales-sub">Atualizando...</div>
+        </article>
+        <article class="kpi">
+          <div class="kpi-title">Receita do Mês</div>
+          <div class="kpi-value" id="kpi-revenue">—</div>
+          <div class="kpi-sub" id="kpi-revenue-sub">Atualizando...</div>
+        </article>
+        <article class="kpi">
+          <div class="kpi-title">Conversão</div>
+          <div class="kpi-value" id="kpi-conversion">—</div>
+          <div class="kpi-sub" id="kpi-conv-sub">Atualizando...</div>
+        </article>
+        <article class="kpi">
+          <div class="kpi-title">Comissões</div>
+          <div class="kpi-value" id="kpi-commission">—</div>
+          <div class="kpi-sub" id="kpi-comm-sub">Atualizando...</div>
+        </article>
+      </section>
+
+      <!-- Gráfico + tabela -->
+      <section class="grid">
+        <article class="card" aria-labelledby="g-title">
+          <div class="card-head">
+            <h2 id="g-title">Vendas últimos 7 dias</h2>
+            <span class="muted" id="g-range">—</span>
+          </div>
+          <canvas id="salesChart" height="140" aria-label="Gráfico de vendas" role="img"></canvas>
+        </article>
+
+        <article class="card" aria-labelledby="t-title">
+          <div class="card-head">
+            <h2 id="t-title">Pedidos recentes</h2>
+            <button id="exportBtn" class="btn small" type="button">Exportar CSV</button>
+          </div>
+          <div class="table-wrap">
+            <table class="table" aria-describedby="t-title">
+              <thead>
+                <tr>
+                  <th>Pedido</th>
+                  <th>Cliente</th>
+                  <th>Produto</th>
+                  <th>Status</th>
+                  <th>Total</th>
+                  <th>Data</th>
+                </tr>
+              </thead>
+              <tbody id="ordersBody"></tbody>
+            </table>
+          </div>
+        </article>
+      </section>
+
+      <footer class="foot">© <span id="year"></span> Miles Trip — painel do vendedor</footer>
+    </main>
+  </div>
+
+  <!-- CORRIGIDO: remova o canvas duplicado que estava fora do main -->
+
+  <!-- Scripts (ordem e caminhos) -->
+  <script src="./js/dashboard.js" defer></script>
+  <script src="./js/main.js" defer></script> <!-- NECESSÁRIO para o logout -->
+</body>
+</html>

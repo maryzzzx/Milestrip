@@ -1,0 +1,137 @@
+
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Configurações • Miles Trip</title>
+  <link rel="stylesheet" href="./css/dashboard.css" />
+  <link rel="stylesheet" href="./css/configuracoes.css" />
+</head>
+<body>
+  <div class="layout">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="brand">
+        <img src="./assets/milestriplogo.png" alt="Miles Trip" class="brand-logo" />
+    </div>
+      <nav>
+        <a href="./dashboard.html" class="nav-item">🏠 Dashboard</a>
+        <a href="./clientes.html" class="nav-item">🧍 Clientes</a>
+        <a href="./pacotes.html" class="nav-item">✈️ Pacotes</a>
+        <a href="./financeiro.html" class="nav-item">💰 Financeiro</a>
+        <a href="./configuracoes.html" class="nav-item active">⚙️ Configurações</a>
+        <div class="divider"></div>
+        <button id="logoutBtn" class="nav-item ghost">🚪 Sair</button>
+      </nav>
+    </aside>
+
+    <!-- Conteúdo -->
+    <main class="content">
+      <div class="topbar">
+        <h2>Configurações</h2>
+        <div class="rowx">
+          <button id="exportSettings" class="btn small">Exportar JSON</button>
+          <label class="btn small ghost" for="importFile" style="cursor:pointer">Importar JSON</label>
+          <input id="importFile" type="file" accept="application/json" hidden />
+          <button id="resetSettings" class="btn small danger">Restaurar padrão</button>
+          <button id="saveAll" class="btn">Salvar tudo</button>
+        </div>
+      </div>
+
+      <div class="grid">
+        <!-- Perfil -->
+        <section class="card">
+          <div class="card-head"><h3>Perfil</h3><span class="muted">Dados públicos do vendedor</span></div>
+          <div class="form-grid">
+            <div class="avatar">
+              <img id="avatarPreview" alt="Avatar" />
+              <label for="avatarInput" class="btn small">Trocar foto</label>
+              <input id="avatarInput" type="file" accept="image/*" hidden />
+            </div>
+            <div class="fields">
+              <div class="field"><label>Nome</label><input id="fNome" type="text" placeholder="Seu nome" /></div>
+              <div class="field"><label>E-mail</label><input id="fEmail" type="email" placeholder="voce@exemplo.com" /></div>
+              <div class="field"><label>Telefone</label><input id="fTelefone" type="text" placeholder="(xx) 9xxxx-xxxx" /></div>
+              <div class="field"><label>Bio (sobre você)</label><textarea id="fBio" rows="3" placeholder="Breve descrição"></textarea></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Preferências -->
+        <section class="card">
+          <div class="card-head"><h3>Preferências</h3><span class="muted">Tema, idioma e notificações</span></div>
+          <div class="pref-grid">
+            <div class="field">
+              <label>Tema</label>
+              <select id="pTema">
+                <option value="dark">Escuro (padrão)</option>
+                <option value="light">Claro</option>
+              </select>
+            </div>
+            <div class="field">
+              <label>Idioma</label>
+              <select id="pLang">
+                <option value="pt-BR">Português (Brasil)</option>
+                <option value="es-ES">Español</option>
+                <option value="en-US">English</option>
+              </select>
+            </div>
+            <div class="toggles">
+              <label class="switch">
+                <input id="nEmail" type="checkbox" />
+                <span>Notificações por e-mail</span>
+              </label>
+              <label class="switch">
+                <input id="nPush" type="checkbox" />
+                <span>Notificações push</span>
+              </label>
+              <label class="switch">
+                <input id="nPromo" type="checkbox" />
+                <span>Receber promoções</span>
+              </label>
+            </div>
+          </div>
+        </section>
+
+        <!-- Pagamentos -->
+        <section class="card">
+          <div class="card-head"><h3>Pagamentos</h3><span class="muted">Chave PIX e conta bancária</span></div>
+          <div class="form-grid small">
+            <div class="field"><label>Chave PIX</label><input id="payPix" type="text" placeholder="CPF/CNPJ, e-mail, tel. ou aleatória" /></div>
+            <div class="field"><label>Banco</label><input id="payBanco" type="text" placeholder="Nome do banco" /></div>
+            <div class="field"><label>Agência</label><input id="payAgencia" type="text" /></div>
+            <div class="field"><label>Conta</label><input id="payConta" type="text" /></div>
+            <div class="field"><label>Favorecido</label><input id="payFav" type="text" placeholder="Nome do titular" /></div>
+          </div>
+        </section>
+
+        <!-- Segurança -->
+        <section class="card">
+          <div class="card-head"><h3>Segurança</h3><span class="muted">Senha e 2FA (demo)</span></div>
+          <div class="form-grid small">
+            <div class="field"><label>Senha atual</label><input id="sAtual" type="password" placeholder="••••••" /></div>
+            <div class="field"><label>Nova senha</label><input id="sNova" type="password" placeholder="mín. 6 caracteres" /></div>
+            <div class="field"><label>Confirmar nova senha</label><input id="sConf" type="password" placeholder="repita a senha" /></div>
+            <div class="field">
+              <label>Autenticação em 2 etapas</label>
+              <label class="switch"><input id="s2FA" type="checkbox" /><span>Ativar 2FA (demo)</span></label>
+            </div>
+            <div class="actions">
+              <button id="btnChangePass" class="btn">Alterar senha</button>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <p class="foot">© Miles Trip — painel do vendedor</p>
+    </main>
+  </div>
+
+  <script src="./js/configuracoes.js" defer></script>
+  <script src="./js/main.js" defer></script>
+  <button id="menuToggle" class="only-mobile btn small" style="position:fixed;left:12px;top:12px;z-index:1201">☰</button>
+
+
+</body>
+</html>

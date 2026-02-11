@@ -1,0 +1,162 @@
+/* ===== Reset & Base ===== */
+
+:root {
+  --primary: #FF6A00;
+  --primary-600: #E55F00;
+  --bg: #0F0F10;
+  --card: #151517;
+  --text: #F3F4F6;
+  --muted: #ffffff;
+  --error: #EF4444;
+  --ok: #22C55E;
+  --focus: #00B8C9;
+  --radius: 16px;
+  --shadow: 0 10px 30px rgba(0, 0, 0, .4);
+}
+
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  color: #222;
+  background-color: #0F0F10;
+  line-height: 1.6;
+}
+
+/* ===== Cabeçalho ===== */
+.topo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #0F0F10;
+  padding: 16px 40px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.logo {
+  width: 10vh;
+  height: auto;
+  display: block;
+}
+
+.nav a {
+  text-decoration: none;
+  color: #333;
+  margin: 0 14px;
+  font-weight: 500;
+  transition: color .2s;
+}
+
+.nav a:hover {
+  color: #FF6A00;
+}
+
+.nav a.ativo {
+  color: #FF6A00;
+  font-weight: 600;
+}
+
+.nav .cta {
+  background: linear-gradient(135deg, #FF6A00, #E85A00);
+  color: #fff !important;
+  padding: 10px 18px;
+  border-radius: 10px;
+}
+
+/* ===== Seção Sobre ===== */
+.conteudo {
+  padding: 60px 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.sobre {
+  text-align: center;
+}
+
+.sobre h1 {
+  font-size: 2.2rem;
+  color: #FF6A00;
+  margin-bottom: 20px;
+}
+
+.sobre h2 {
+  margin-top: 40px;
+  color: #00B8C9;
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.sobre p {
+  max-width: 760px;
+  margin: 12px auto;
+  font-size: 1rem;
+  color:var(--text);
+}
+
+.sobre ul {
+  list-style: none;
+  padding: 0;
+  margin: 20px auto;
+  text-align: left;
+  max-width: 600px;
+}
+
+.sobre ul li {
+  position: relative;
+  padding-left: 26px;
+  margin: 6px 0;
+  color:var(--text);
+}
+
+.sobre ul li::before {
+  content: "•";
+  color: #FF6A00;
+  position: absolute;
+  left: 6px;
+  top: 0;
+  font-size: 22px;
+  line-height: 1;
+}
+
+.btn-voltar {
+  display: inline-block;
+  margin-top: 40px;
+  background: #00B8C9;
+  color: #fff;
+  padding: 12px 24px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background .2s;
+}
+
+.btn-voltar:hover {
+  background: #0098a8;
+}
+
+/* ===== Rodapé ===== */
+.rodape {
+  text-align: center;
+  padding: 30px 16px;
+  background:#0F0F10;
+  color: #ebebeb;
+  border-top: 1px solid #ddd;
+}
+
+/* ===== Responsivo ===== */
+@media (max-width: 700px) {
+  .topo {
+    flex-direction: column;
+    gap: 12px;
+  }
+  .nav {
+    text-align: center;
+  }
+  .nav a {
+    display: inline-block;
+    margin: 8px;
+  }
+}

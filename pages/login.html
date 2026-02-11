@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Login • Miles Trip</title>
+  <link rel="stylesheet" href="./css/login.css" />
+</head>
+<body>
+  <main class="wrap">
+    <div class="logo-wrap">
+      <img src="./assets/milestriplogo.png" alt="Miles Trip" class="logo-img" />
+    </div>
+
+    <section class="card">
+      <h2>Entrar</h2>
+      <p class="muted">Acesse com seu e-mail e senha.</p>
+
+      <form id="clientLoginForm" novalidate>
+        <div class="field">
+          <label for="cemail">E-mail</label>
+          <input id="cemail" type="email" placeholder="voce@exemplo.com" required />
+        </div>
+        <div class="field">
+          <label for="cpass">Senha</label>
+          <input id="cpass" type="password" placeholder="••••••••" minlength="6" required />
+        </div>
+
+        <div class="row between">
+          <a id="forgotLink" class="link" href="./recuperar-senha.html">Esqueci minha senha</a>
+          <a id="signupLink" class="link" href="./cadastrar.html">Cadastrar</a>
+        </div>
+
+        <button id="clientEnterBtn" class="btn" type="submit">Entrar</button>
+
+        <div id="alert" class="alert" role="status" aria-live="polite"></div>
+      </form>
+
+      <div class="divider"></div>
+
+      <div class="vendor-cta">
+        <p class="muted">É parceiro / vendedor?</p>
+        <a class="btn secondary" href="./loginvendedor.html">SOU VENDEDOR</a>
+      </div>
+    </section>
+  </main>
+
+  <script src="./js/login-geral.js" defer></script>
+</body>
+</html>

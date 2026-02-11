@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Miles Trip — Viaje melhor, pague menos</title>
+  <meta name="description" content="Pacotes, passagens e consultoria em milhas. Compre online na Miles Trip e economize de verdade." />
+  <meta property="og:title" content="Miles Trip — Viaje melhor, pague menos" />
+  <meta property="og:description" content="Pacotes, passagens e consultoria em milhas. Compre online na Miles Trip e economize de verdade." />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#FF6A00" />
+  <link rel="stylesheet" href="./style.css">
+
+<body>
+  <!-- Topbar -->
+  <div class="topbar">
+    <div class="wrap">
+      <span class="pill">🔥 <b>Lançamento</b></span>
+      <span class="cupom">Use o cupom <u><b>MILES10</b></u> e ganhe <u><b>10% OFF</b></u> hoje.</span>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header aria-label="Cabeçalho do site">
+    <div class="nav">
+      <a class="logo" href="index.html" aria-label="Miles Trip - Início">
+        <img src="./pages/assets/milestriplogo.png" class="logo-badge" alt="Miles Trip">
+      </a>
+      <nav class="menu" aria-label="Navegação principal">
+        <a class="only-desktop" href="#produtos">Pacotes</a>
+        <a class="only-desktop" href="#como-funciona">Como funciona</a>
+        <a class="only-desktop" href="#depoimentos">Depoimentos</a>
+        <a class="only-desktop" href="#contato">Contato</a>
+        <button class="cta">
+        <a class="only-desktop btn-login" href="./pages/login.html">Login</a>
+        </button>
+        <button class="cta cart-btn" id="openCart" aria-label="Abrir carrinho">
+          <img class="carrinho-img" src="./assets/output-onlinepngtools.png" alt="carrinho"> <span class="badge" id="cartCount">0</span>
+        </button>
+        <button id="modo-toggle" class="cta">🌙 Modo escuro</button>
+        <span id="clientGreeting">Olá, visitante</span>
+        <button id="clientLogout" class="mini cta">Sair</button>
+
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero" id="home">
+    <div class="hero-inner">
+      <div class="hero-content">
+        <span class="eyebrow"><b>Economize</b> com milhas • pacotes • consultoria</span>
+        <h1>Viaje melhor, <span style="color:var(--brand)">pague menos</span>.<br>Seu e-commerce de viagens com milhas.</h1>
+        <p>Pacotes inteligentes, emissões com desconto e consultoria que turbina suas milhas. Tudo em um clique, com atendimento humano e transparente.</p>
+
+        <div class="hero-card">
+          <div class="check">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            <div><b>Pacotes com milhas</b><br><span class="muted">Combos otimizados para feriados e férias.</span></div>
+          </div>
+          <div class="check">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            <div><b>Emissão assistida</b><br><span class="muted">Você aprova e a gente emite. Sem dor de cabeça.</span></div>
+          </div>
+          <div class="check">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            <div><b>Suporte VIP</b><br><span class="muted">Atendimento humano real por especialistas.</span></div>
+          </div>
+          <div class="hero-actions">
+            <a href="#produtos" class="cta">Ver ofertas</a>
+            <a href="#como-funciona" class="cta ghost">Como funciona</a>
+          </div>
+          <p class="note">Pagamento em até 12x • Garantia de satisfação • Certificado SSL</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEW: Promo rectangular carousel (below hero) -->
+  <section class="promo-banner" aria-label="Banner promocional">
+    <div class="wrap">
+      <div class="promo-carousel">
+        <button class="carousel-btn prev" aria-label="Anterior">&#10094;</button>
+
+        <div class="carousel-track">
+          <div class="carousel-slide">
+            <img src="./assets/banner.png" alt="Promo 1">
+          </div>
+          <div class="carousel-slide">
+            <img src="./assets/bannerP.png" alt="Promo 2">
+          </div>
+          <div class="carousel-slide">
+            <img src="./assets/bannerO.png" alt="Promo 3">
+          </div>
+        </div>
+
+        <button class="carousel-btn next" aria-label="Próximo">&#10095;</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Produtos (unchanged layout: now full width grid, no sidebar banner) -->
+  <section id="produtos">
+    <div class="wrap">
+      <div class="section-title">
+        <h2>Ofertas em destaque</h2>
+        <a href="#produtos" class="caps">ver tudo →</a>
+      </div>
+      <div class="grid" id="productGrid"></div>
+    </div>
+  </section>
+
+  <!-- Como funciona -->
+  <section id="como-funciona">
+    <div class="wrap">
+      <div class="section-title">
+        <h2>Como funciona</h2>
+      </div>
+      <div class="steps">
+        <div class="step"><b>1</b><h3>Escolha sua oferta</h3><p class="muted">Pacotes, emissão assistida ou consultoria.</p></div>
+        <div class="step"><b>2</b><h3>Finalize com segurança</h3><p class="muted">Pagamento em até 12x. Acompanhe por e-mail.</p></div>
+        <div class="step"><b>3</b><h3>Partiu viajar!</h3><p class="muted">Receba confirmação e suporte humano.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- KPIs -->
+  <section>
+    <div class="wrap trust">
+      <div class="kpi"><h3>+12 mil</h3><p>clientes atendidos</p></div>
+      <div class="kpi"><h3>4.9/5</h3><p>avaliação média</p></div>
+      <div class="kpi"><h3>R$ 18 mi</h3><p>em economias geradas</p></div>
+      <div class="kpi"><h3>SSL</h3><p>checkout seguro</p></div>
+    </div>
+  </section>
+
+  <!-- Depoimentos -->
+  <section id="depoimentos">
+    <div class="wrap">
+      <div class="section-title"><h2>Quem já viajou com a gente</h2></div>
+      <div class="testi">
+        <div class="quote"><p>“Consegui emitir Réveillon em Floripa com milhas e ainda sobrou pra próxima viagem.”</p><div class="who">— <strong>Ana L.</strong> • SP</div></div>
+        <div class="quote"><p>“Consultoria salvadora! Em 24h estava com os bilhetes em mãos.”</p><div class="who">— <strong>Marcos T.</strong> • RJ</div></div>
+        <div class="quote"><p>“Pacote completo e ótimo atendimento. Pagamos bem menos que nas agências.”</p><div class="who">— <strong>Renata S.</strong> • PR</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter -->
+  <section id="contato">
+    <div class="wrap newsletter">
+      <div>
+        <h3>Receba as promoções mais quentes</h3>
+        <p>Entre na lista VIP e seja o primeiro a saber de emissões e pacotes.</p>
+      </div>
+      <form id="newsletterForm">
+        <input type="email" required placeholder="Seu melhor e-mail" aria-label="Seu melhor e-mail"/>
+        <button class="cta" type="submit">Quero receber</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="wrap foot">
+      <div>
+        <h4>Institucional</h4>
+        <a href="./pages/sobre.html">Sobre</a><br><a href="./pages/termos.html">Privacidade</a>
+      </div>
+      <div>
+        <h4>Atendimento</h4>
+        <a href="mailto:contato@milestrip.com.br">📧 contato@milestrip.com.br</a><br>
+        <a href="#" onclick="alert('Abrir WhatsApp')">💬 WhatsApp</a>
+      </div>
+    </div>
+    <div class="wrap sub">
+      <div>© <span id="year"></span> Miles Trip. Todos os direitos reservados.</div>
+      <div class="pay"><span class="pill">Visa</span><span class="pill">Pix</span><span class="pill">Mastercard</span></div>
+    </div>
+  </footer>
+
+  <!-- Carrinho -->
+  <aside class="drawer" id="cartDrawer">
+    <header><div class="wrap nav"><strong>Seu carrinho</strong><button class="cta ghost" id="closeCart">Fechar</button></div></header>
+    <div class="content" id="cartItems"></div>
+    <div class="wrap summary">
+      <div class="row"><span class="muted">Cupom aplicado:</span> <b>MILES10</b></div>
+      <div class="row"><span class="muted">Subtotal:</span> <b id="subtotal">R$ 0,00</b></div>
+      <div class="row"><span class="muted">Desconto:</span> <b id="discount">- R$ 0,00</b></div>
+      <div class="row"><span>Total:</span> <b id="total">R$ 0,00</b></div>
+      <div class="checkout">
+        <button class="ghost">Ver meios de pagamento</button>
+        <button class="cta">Finalizar compra</button>
+      </div>
+    </div>
+  </aside>
+<!-- Chat Launcher -->
+<button id="chat-launcher" class="chat-launcher" aria-label="Abrir chat de suporte" aria-haspopup="dialog" aria-controls="chat-widget" aria-expanded="false">
+  <span class="chat-avatar" aria-hidden="true">
+    <img src="./assets/bot-girl.png" alt="" width="56" height="56" style="display:block; border-radius:50%;" />
+  </span>
+
+  <span class="chat-bubble" aria-hidden="true">Posso ajudar?</span>
+</button>
+
+<!-- Widget do chat -->
+<div id="chat-widget" class="chat-widget" role="dialog" aria-modal="false" aria-labelledby="chat-title" hidden>
+  <div class="chat-card" role="document">
+    <header class="chat-header">
+      <div class="chat-id">
+        <span class="dot"></span>
+        <strong id="chat-title">Atendimento Miles Trip</strong>
+        <span class="small">online agora</span>
+      </div>
+      <button class="chat-close" id="chat-close" aria-label="Fechar chat">×</button>
+    </header>
+
+    <div class="chat-body" id="chat-body" aria-live="polite">
+      <div class="msg bot">
+        <div class="avatar mini"></div>
+        <div class="bubble">
+          Oi! Sou a assistente da Miles Trip 😄 Como posso te ajudar hoje?
+        </div>
+      </div>
+    </div>
+
+    <form class="chat-input" id="chat-form">
+      <input id="chat-text" type="text" placeholder="Digite sua mensagem…" aria-label="Mensagem para o chat" />
+      <button type="submit" class="cta">Enviar</button>
+    </form>
+  </div>
+</div>
+
+
+
+  <script src="./script.js"></script>
+  <script src="./pages/js/cliente-header.js" defer></script>
+  <script src="./pages/js/main.js" defer></script>
+
+
+
+  
+ 
+</body>
+</html>

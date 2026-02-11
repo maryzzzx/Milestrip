@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Recuperar Senha • Miles Trip</title>
+  <link rel="stylesheet" href="./css/login.css" />
+</head>
+<body>
+  <main class="wrap">
+    <div class="logo-wrap">
+      <img src="./assets/milestriplogo.png" alt="Miles Trip" class="logo-img" />
+    </div>
+    <section class="card">
+      <h2>Recuperar senha</h2>
+      <p class="muted">Informe o e-mail cadastrado para receber o link de redefinição.</p>
+
+      <form id="recoverForm" novalidate>
+        <div class="field">
+          <label for="rmail">E-mail</label>
+          <input id="rmail" type="email" placeholder="voce@exemplo.com" required />
+        </div>
+
+        <button class="btn" type="submit">Enviar</button>
+        <div id="alert" class="alert" role="status" aria-live="polite"></div>
+      </form>
+
+      <div class="divider"></div>
+      <a href="./login.html" class="link">← Voltar ao login</a>
+    </section>
+  </main>
+
+  <script src="./js/recuperar-senha.js" defer></script>
+</body>
+</html>

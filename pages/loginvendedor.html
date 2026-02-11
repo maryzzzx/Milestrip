@@ -1,0 +1,84 @@
+
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Login do Vendedor • Miles Trip</title>
+  <meta name="description" content="Acesse o painel do vendedor para gerenciar pedidos, anúncios e comissões." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/login.css" />
+</head>
+<body>
+  <main class="wrap">
+  
+    <section class="card" aria-labelledby="login-title">
+      <h2 id="login-title" class="panel-title">Login do Vendedor</h2>
+      <p class="panel-sub">Acesse seu painel para publicar ofertas, acompanhar vendas e ver suas comissões.</p>
+
+      <form id="loginForm" novalidate>
+        <div class="field">
+          <label for="email">E-mail</label>
+          <input class="input" type="email" id="email" name="email" autocomplete="email" placeholder="voce@exemplo.com" required />
+        </div>
+        <div class="field">
+          <label for="password">Senha</label>
+          <input class="input" type="password" id="password" name="password" autocomplete="current-password" placeholder="••••••••" minlength="6" required />
+        </div>
+
+        <div class="row">
+          <label class="check">
+            <input type="checkbox" id="remember" name="remember" />
+            Manter conectado
+          </label>
+          <a id="forgotLink" class="link" href="./recuperar-senha.html">Esqueci minha senha</a>
+        </div>
+
+        <button class="btn" id="submitBtn" type="submit">
+          <span class="btn-text">Entrar</span>
+        </button>
+
+        <div id="alert" class="alert" role="status"></div>
+
+        <p class="helper">Ainda não tem acesso? <a class="link" href="./cadastrar-vendedor.html">Criar conta de vendedor</a></p>
+      </form>
+
+      <p class="foot">Protegido por autenticação segura. Ao continuar, você concorda com nossos <a href="#">Termos</a> e <a href="#">Privacidade</a>.</p>
+    </section>
+
+    <aside class="card brand" aria-label="Informações para vendedores">
+      <div class="logo">
+        <div class="logo-wrap">
+      <img src="./assets/milestriplogo.png" alt="Miles Trip" class="logo-img" />
+      
+
+    </div>
+       </div>
+        <h1>Vendedores</h1>
+      </div>
+      <p class="pitch">
+        Ganhe mais com suas ofertas: publique pacotes, acompanhe conversões em tempo real e receba suas comissões sem mistério.
+        Suporte dedicado e painel simples para focar no que importa: vender.
+      </p>
+      <ul class="pitch" style="margin:18px 0 0; padding-left:18px">
+        <li>📦 Gestão fácil de anúncios</li>
+        <li>💸 Comissões e repasses transparentes</li>
+        <li>📈 Indicadores de vendas atualizados</li>
+        <li>🔐 Segurança e 2FA opcionais</li>
+      </ul>
+    </aside>
+  </main>
+  <form id="loginForm" novalidate>
+  <!-- ...campos... -->
+  
+</form>
+
+<!-- se loginvendedor.html estiver em /pages, e o JS em /pages/js -->
+<script src="./js/app.js" defer></script>
+
+
+ 
+</body>
+</html>

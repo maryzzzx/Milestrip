@@ -1,0 +1,58 @@
+@import url('./login-geral.css');
+
+:root {
+  --primary: #FF6A00;
+  --primary-600: #E55F00;
+  --bg: #0F0F10;
+  --card: #151517;
+  --text: #F3F4F6;
+  --muted: #A3A3A3;
+  --error: #EF4444;
+  --ok: #22C55E;
+  --focus: #FF6A00;
+  --radius: 16px;
+  --shadow: 0 10px 30px rgba(0, 0, 0, .4);
+}
+body {
+  background-color:#0F0F10;
+}
+.termos {
+  max-width: 760px;
+  margin: 60px auto;
+  line-height: 1.6;
+}
+
+.termos h2 {
+  margin-bottom: 10px;
+  font-size: 1.8rem;
+  color:var(--text)
+}
+
+.termos h3 {
+  color: var(--focus);
+  margin-top: 28px;
+  font-size: 1.1rem;
+}
+
+.termos p, .termos li {
+  color: var(--text);
+  margin-bottom: 8px;
+}
+
+.termos ul {
+  list-style: disc;
+  margin-left: 20px;
+}
+
+.termos a.btn {
+  display: inline-block;
+  margin-top: 25px;
+  background: var(--primary);
+  color: #fff;
+  padding: 10px 24px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.2s;
+}
+.termos a.btn:hover { background: var(--primary-600); }

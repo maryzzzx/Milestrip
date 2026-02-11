@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cadastrar vendedor • Miles Trip</title>
+  
+  <link rel="stylesheet" href="./css/login.css" />
+ 
+
+</head>
+<body>
+  <main class="wrap">
+    
+      <div class="logo-wrap">
+      <img src="./assets/milestriplogo.png" alt="Miles Trip" class="logo-img" />
+    </div>
+    <section class="card">
+      <h2>Criar conta de Vendedor</h2>
+      <p class="muted">Cadastre-se para publicar pacotes e acompanhar suas comissões.</p>
+
+      <form id="vendSignupForm" novalidate>
+        <div class="grid-2">
+          <div class="field">
+            <label for="vnome">Nome completo</label>
+            <input id="vnome" type="text" placeholder="Seu nome" required />
+          </div>
+          <div class="field">
+            <label for="vemail">E-mail</label>
+            <input id="vemail" type="email" placeholder="voce@exemplo.com" required />
+          </div>
+          <div class="field">
+            <label for="vtel">Telefone (WhatsApp)</label>
+            <input id="vtel" type="tel" placeholder="(xx) 9xxxx-xxxx" />
+          </div>
+          <div class="field">
+            <label for="vempresa">Empresa (opcional)</label>
+            <input id="vempresa" type="text" placeholder="Razão social / Fantasia" />
+          </div>
+          <div class="field">
+            <label for="vpix">Chave PIX (pagamentos)</label>
+            <input id="vpix" type="text" placeholder="E-mail, CPF/CNPJ, Tel. ou Aleatória" />
+          </div>
+          <div class="field">
+            <label for="vsite">Site/Instagram (opcional)</label>
+            <input id="vsite" type="text" placeholder="@perfil ou URL" />
+          </div>
+          <div class="field">
+            <label for="vpass">Senha</label>
+            <input id="vpass" type="password" placeholder="mín. 6 caracteres" minlength="6" required />
+          </div>
+          <div class="field">
+            <label for="vconf">Confirmar senha</label>
+            <input id="vconf" type="password" placeholder="repita a senha" minlength="6" required />
+          </div>
+        </div>
+
+        <div class="row between" style="margin:6px 0 14px">
+          <label class="row" style="gap:8px; font-size:14px">
+            <input id="vterms" type="checkbox" />
+            Aceito os <a class="link" href="./termos.html" target="_blank">Termos e Privacidade</a>
+
+          </label>
+          <a class="link" href="./loginvendedor.html">Já sou vendedor</a>
+        </div>
+
+        <button class="btn" type="submit">Cadastrar</button>
+        <div id="alert" class="alert" role="status" aria-live="polite"></div>
+      </form>
+
+      <div class="divider"></div>
+      <div class="vendor-cta">
+        <p class="muted">Entrar como cliente?</p>
+        <a class="btn secondary" href="./login.html">Sou Cliente</a>
+      </div>
+    </section>
+  </main>
+
+  <script src="./js/cadastrar-vendedor.js" defer></script>
+</body>
+</html>

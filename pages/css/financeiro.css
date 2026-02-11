@@ -1,0 +1,129 @@
+* Financeiro — estilos complementares */
+.filters{ display:flex; gap:10px; flex-wrap:wrap; align-items:center; }
+.filters input, .filters select{ background:#0D0D0E; border:1px solid #262626; border-radius:10px; padding:10px 12px; color:var(--text); }
+.rowx{ display:flex; gap:10px; flex-wrap:wrap; }
+
+
+#finChart{ width:100%; height:220px; display:block; }
+
+
+.badge-status{ display:inline-flex; align-items:center; justify-content:center; height:26px; padding:0 10px; border-radius:999px; font-size:12px; font-weight:700; line-height:1; }
+.badge-status.pago{ background:rgba(34,197,94,.15); color:#86efac }
+.badge-status.pendente{ background:rgba(234,179,8,.15); color:#fde68a }
+.badge-status.atrasado{ background:rgba(239,68,68,.15); color:#fecaca }
+
+
+/* ações na tabela */
+.table td:last-child{ display:flex; gap:8px; align-items:center; }
+/* ===== Logo no topo da sidebar ===== */
+.sidebar .brand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 10px;
+  border-bottom: 1px solid rgba(255,255,255,.08);
+}
+
+.sidebar .brand-logo {
+  width: 160px; /* ajuste o tamanho como preferir */
+  height: auto;
+  display: block;
+  background: transparent !important;
+  filter: drop-shadow(0 6px 14px rgba(0,0,0,.35));
+  transition: transform .3s ease, filter .3s ease;
+}
+
+.sidebar .brand-logo:hover {
+  transform: scale(1.05);
+  filter: drop-shadow(0 10px 20px rgba(0,0,0,.45));
+}
+/* ====== CLIENTES — RESPONSIVO ====== */
+
+/* Contêiner geral */
+.layout{
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 18px;
+}
+
+/* Topbar: busca + botões */
+.topbar .rowx{
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.topbar .search{ flex: 1 1 320px; min-width: 240px; }
+.topbar .search input{ width: 100%; }
+
+/* Tabela com rolagem horizontal segura */
+.table-wrap{
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Ações: quebrar linha se apertar */
+.table td:last-child .btn{
+  margin: 3px 4px 0 0;
+}
+.table td:last-child{
+  white-space: nowrap;
+}
+
+/* ===== 1200px ↓: reduz sidebar e cards ===== */
+@media (max-width: 1200px){
+  .layout{ grid-template-columns: 220px 1fr; }
+  .cards{ grid-template-columns: repeat(2, minmax(0,1fr)); gap:12px; }
+}
+
+/* ===== 992px ↓: tablet ===== */
+@media (max-width: 992px){
+  .layout{ grid-template-columns: 200px 1fr; }
+  .content{ padding: 12px; }
+  .card{ padding: 16px; }
+  .table th, .table td{ padding: 10px 12px; }
+  /* coluna Ações um pouco mais larga */
+  .table th:last-child, .table td:last-child{ min-width: 160px; }
+}
+
+/* ===== 768px ↓: mobile landscape — sidebar vira gaveta ===== */
+@media (max-width: 768px){
+  .layout{ grid-template-columns: 1fr; }
+  .sidebar{
+    position: fixed; inset: 0 auto 0 0; width: 86vw; max-width: 320px;
+    transform: translateX(-100%); transition: transform .25s ease; z-index:1100;
+  }
+  .sidebar.open{ transform: translateX(0); }
+  .content{ padding: 12px; }
+
+  /* Controles em coluna */
+  .topbar .rowx{ gap:8px; }
+  .topbar .search{ flex-basis: 100%; min-width: 0; }
+  .rowx .btn{ width: 100%; }           /* + Adicionar / Exportar viram bloco */
+
+  /* Tabela: mantém rolagem só nela */
+  .table-wrap{ margin: 0 -8px; padding: 0 8px; }
+}
+
+/* ===== 560px ↓: mobile estreito — esconde colunas menos críticas ===== */
+/* Ordem das colunas: 1-ID | 2-Nome | 3-E-mail | 4-Telefone | 5-Última | 6-Total | 7-Ações */
+@media (max-width: 560px){
+  /* Esconde ID, E-mail e Telefone (mantém Nome, Última, Total e Ações) */
+  .table th:nth-child(1),
+  .table td:nth-child(1),
+  .table th:nth-child(3),
+  .table td:nth-child(3),
+  .table th:nth-child(4),
+  .table td:nth-child(4){ display: none; }
+
+  /* Ações empilhadas e tocáveis */
+  .table td:last-child{ display: flex; flex-wrap: wrap; gap: 6px; }
+  .table td:last-child .btn{ flex: 1 1 calc(50% - 6px); }
+}
+
+/* Botão de menu mobile (se usar) */
+.only-mobile{ display: none; }
+@media (max-width: 768px){
+  .only-mobile{ display: inline-flex; }
+}
